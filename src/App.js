@@ -1,9 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
-import { FaQuoteRight } from 'react-icons/fa';
-import data from './data';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './Header'
+import Main from './Main'
 function App() {
-  return <h2>slider project setup</h2>;
+	return (
+		<Router>
+			<div className="container">
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<>
+								<Header />
+								<Main />
+							</>
+						}
+					/>
+				</Routes>
+			</div>
+		</Router>
+	)
 }
 
-export default App;
+export default App
