@@ -111,7 +111,7 @@ const ReviewsContainer = styled.div`
 	.arrow-right {
 		font-size: 25px;
 		background-color: var(--clr-grey-5);
-		color: white;
+		color: #fff;
 		position: absolute;
 		z-index: 1;
 		display: flex;
