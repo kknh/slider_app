@@ -14,7 +14,6 @@ const HeaderStyle = styled.header`
 	font-size: 2.5rem;
 	font-weight: 500;
 	color: var(--clr-grey-3);
-	margin-bottom: 2rem;
 	span {
 		color: var(--clr-primary-5);
 		margin-right: 13px;
