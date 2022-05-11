@@ -9,11 +9,16 @@ function Header() {
 	)
 }
 
-const HeaderStyle = styled.header`
+const HeaderStyle = styled.h2`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 	font-size: 2.5rem;
+	line-height: 1;
 	font-weight: 500;
 	color: var(--clr-grey-3);
+	letter-spacing: 0.1rem;
 	span {
 		color: var(--clr-primary-5);
 		margin-right: 13px;
