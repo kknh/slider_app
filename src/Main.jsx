@@ -7,37 +7,35 @@ function Main() {
 	const { reviews, position, increment, decrement } = useContext(Context)
 
 	return (
-		<MainStyle>
-			<div className="reviewsContainer">
-				<div className="buttonsContainer">
-					<FiChevronLeft className="arrow-left" onClick={decrement} />
-					<FiChevronRight className="arrow-right" onClick={increment} />
-				</div>
-				{reviews.map((review, index) => (
-					<div className={`reviewContainer ${position(index)}`}>
-						<img src={review.image} alt="reviewer" className="image" />
-						<div className="name">{review.name}</div>
-						<div className="title">{review.title}</div>
-						<div className="quote">{review.quote}</div>
-						<FaQuoteRight color={'var(--clr-primary-5)'} size={'3rem'} />
-					</div>
-				))}
-			</div>
-		</MainStyle>
+		<ReviewsContainer>
+			{reviews.map((review, index) => (
+				<article className={`reviewContainer ${position(index)}`}>
+					<img src={review.image} alt="reviewer" className="image" />
+					<h4 className="name">{review.name}</h4>
+					<p className="title">{review.title}</p>
+					<p className="quote">{review.quote}</p>
+					<FaQuoteRight color={'var(--clr-primary-5)'} size={'3rem'} />
+				</article>
+			))}
+			<button className="arrow-left btn" onClick={decrement}>
+				<FiChevronLeft />
+			</button>
+			<button className="arrow-right btn" onClick={increment}>
+				<FiChevronRight />
+			</button>
+		</ReviewsContainer>
 	)
 }
-const MainStyle = styled.div`
-	.reviewsContainer {
-		position: relative;
-		width: 80vw;
-		height: 400px;
-		margin: 5rem auto;
-		max-width: 800px;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+const ReviewsContainer = styled.div`
+	position: relative;
+	width: 80vw;
+	height: 400px;
+	margin: 5rem auto;
+	max-width: 800px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	.reviewContainer {
 		display: flex;
@@ -100,15 +98,25 @@ const MainStyle = styled.div`
 		letter-spacing: 0.5px;
 	}
 
+	.btn {
+		border: none;
+		outline: none;
+		height: 30px;
+		width: 30px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
 	.arrow-left,
 	.arrow-right {
-		font-size: 30px;
+		font-size: 25px;
 		background-color: var(--clr-grey-5);
-		border-radius: 5px;
 		color: white;
 		position: absolute;
-		cursor: pointer;
 		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.arrow-left {

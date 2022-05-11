@@ -8,7 +8,7 @@ function App() {
 	return (
 		<ContextProvider>
 			<Router>
-				<div className="container">
+				<section className="container">
 					<Routes>
 						<Route
 							path="/"
@@ -20,7 +20,7 @@ function App() {
 							}
 						/>
 					</Routes>
-				</div>
+				</section>
 			</Router>
 		</ContextProvider>
 	)
